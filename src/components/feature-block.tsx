@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface FeatureBlockProps {
   title: string;
   description: string;
@@ -7,10 +5,10 @@ interface FeatureBlockProps {
   imageSrc?: string;
 }
 
-export function FeatureBlock({ title, description, reverse = false, imageSrc }: FeatureBlockProps) {
+export function FeatureBlock({ title, description, reverse = false }: FeatureBlockProps) {
   return (
-    <div className={`flex flex-col items-start gap-8 lg:gap-20 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
-      <div className="flex w-full flex-1 flex-col gap-5">
+    <div className={`mx-auto flex w-full flex-col gap-10 md:gap-[72px] xl:w-[1200px] ${reverse ? "md:flex-row-reverse" : "md:flex-row"}`}>
+      <div className="flex w-full flex-col gap-5 md:w-0 md:flex-1">
         <h3 className="text-2xl font-medium leading-8 text-foreground md:text-3xl md:leading-9">
           {title}
         </h3>
@@ -18,11 +16,7 @@ export function FeatureBlock({ title, description, reverse = false, imageSrc }: 
           {description}
         </p>
       </div>
-      <div className="aspect-[5/4] w-full shrink-0 overflow-hidden rounded-2xl lg:w-[543px]" aria-label="Image container">
-        {imageSrc && (
-          <Image src={imageSrc} alt="" width={543} height={434} className="h-full w-full object-cover" />
-        )}
-      </div>
+      <div className="aspect-[5/4] w-full overflow-hidden rounded-2xl bg-neutral-100 md:w-0 md:flex-1" aria-label="Image container" />
     </div>
   );
 }
