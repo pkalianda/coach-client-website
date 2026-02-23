@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { WaitlistButton } from "@/components/waitlist-button";
 
 export function Navbar() {
   return (
-    <nav className="fixed left-1/2 top-4 z-50 flex w-[420px] -translate-x-1/2 items-center justify-between rounded-full bg-secondary px-4 py-2.5 md:top-10">
+    <nav className="fixed left-1/2 top-4 z-50 flex w-[420px] -translate-x-1/2 items-center justify-between rounded-full bg-neutral-200/30 backdrop-blur-md px-4 py-2.5 md:top-10">
       <Image src="/images/glide-logo.svg" alt="Logo" width={66} height={18} className="transition-opacity hover:opacity-60" />
-      <Button size="sm" className="rounded-full">Get started</Button>
+      <WaitlistButton className="h-8 rounded-full px-4 text-sm">Get started</WaitlistButton>
     </nav>
   );
 }
