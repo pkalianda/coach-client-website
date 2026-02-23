@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { FeatureBlock } from "@/components/feature-block";
+import { WaitlistButton } from "@/components/waitlist-button";
 
 export default function Home() {
   return (
@@ -21,9 +21,9 @@ export default function Home() {
               workouts, track progress, and handle payments—all in one place
             </p>
             <div className="flex items-center gap-2">
-              <Button className="h-10 rounded-full px-6">
+              <WaitlistButton className="h-10 rounded-full px-6">
                 Get started
-              </Button>
+              </WaitlistButton>
             </div>
           </div>
           <div className="relative h-[220px] w-full overflow-hidden rounded-2xl md:h-[450px] md:rounded-3xl lg:h-[615px]">
@@ -93,9 +93,9 @@ export default function Home() {
             <p className="max-w-[600px] text-center text-base leading-6 text-muted-foreground">
               Join our beta testing waitlist and upgrade your coaching business
             </p>
-            <Button className="h-10 rounded-full px-6">
+            <WaitlistButton className="h-10 rounded-full px-6">
               Try Glide for free
-            </Button>
+            </WaitlistButton>
           </div>
         </section>
 

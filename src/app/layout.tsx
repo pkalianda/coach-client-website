@@ -9,7 +9,7 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
-  title: "Zuck - Client Management for Coaches",
+  title: "Glide - Client Management for Coaches",
   description: "Client management made easier than your rest days. Build workouts, track progress, and handle payments—all in one place.",
 };
 
