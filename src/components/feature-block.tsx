@@ -1,11 +1,22 @@
+import Image from "next/image";
+
 interface FeatureBlockProps {
   title: string;
   description: string;
   reverse?: boolean;
   imageSrc?: string;
+  imageAnchor?: "bottom-right" | "bottom-center" | "bottom-left" | "center-left";
+  imageWidth?: string;
 }
 
-export function FeatureBlock({ title, description, reverse = false }: FeatureBlockProps) {
+export function FeatureBlock({ title, description, reverse = false, imageSrc, imageAnchor = "bottom-center", imageWidth = "75%" }: FeatureBlockProps) {
+  const anchorClass = {
+    "bottom-right": "bottom-0 right-0",
+    "bottom-center": "bottom-0 left-1/2 -translate-x-1/2",
+    "bottom-left": "bottom-0 left-0",
+    "center-left": "top-1/2 left-0 -translate-y-1/2",
+  }[imageAnchor];
+
   return (
     <div className={`mx-auto flex w-full flex-col gap-10 md:gap-[72px] xl:w-[1200px] ${reverse ? "md:flex-row-reverse" : "md:flex-row"}`}>
       <div className="flex w-full flex-col gap-5 md:w-0 md:flex-1">
@@ -16,7 +27,21 @@ export function FeatureBlock({ title, description, reverse = false }: FeatureBlo
           {description}
         </p>
       </div>
-      <div className="aspect-[5/4] w-full overflow-hidden rounded-2xl bg-neutral-100 md:w-0 md:flex-1" aria-label="Image container" />
+      <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl bg-neutral-100 md:w-0 md:flex-1" aria-label="Image container">
+        {imageSrc && (
+          <div className={`absolute ${anchorClass}`} style={{ width: imageWidth }}>
+            <Image
+              src={imageSrc}
+              alt={title}
+              width={1600}
+              height={1200}
+              quality={90}
+              className="w-full h-auto select-none pointer-events-none"
+              draggable={false}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

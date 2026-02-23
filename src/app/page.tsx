@@ -26,8 +26,20 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative h-[300px] w-full overflow-hidden rounded-2xl md:h-[450px] md:rounded-3xl lg:h-[615px]">
+          <div className="relative h-[220px] w-full overflow-hidden rounded-2xl md:h-[450px] md:rounded-3xl lg:h-[615px]">
             <Image src="/images/meshgradient.png" alt="" fill className="object-cover pointer-events-none select-none" draggable={false} />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] max-w-[1100px]">
+              <Image
+                src="/images/heroimg.png"
+                alt="Glide dashboard"
+                width={1920}
+                height={1080}
+                quality={90}
+                className="w-full h-auto select-none pointer-events-none"
+                draggable={false}
+                priority
+              />
+            </div>
           </div>
         </section>
 
@@ -50,18 +62,23 @@ export default function Home() {
               title="Create Workouts & Programs"
               description="Design personalized workout plans and multi-week programs for each client. Build your exercise library once, then mix and match to create unlimited variations. Give your clients professional programming they can follow anywhere."
               reverse
-              imageSrc="/images/sol1-img.png"
+              imageSrc="/images/solimg1.png"
+              imageAnchor="bottom-right"
             />
             <FeatureBlock
               title="Track Client Progress Remotely"
               description="Monitor workouts, nutrition, measurements, and check-ins all in one dashboard. Get real-time insights into what's working and adjust programs on the fly—no more scattered spreadsheets or endless text threads."
-              imageSrc="/images/sol2-img.png"
+              imageSrc="/images/sol2img.png"
+              imageAnchor="center-left"
+              imageWidth="80%"
             />
             <FeatureBlock
               title="Manage Payments & Finances"
               description="Send invoices, process payments, and track your income in one place. See which clients have paid, who's overdue, and how your business is performing. Spend less time chasing payments and more time training."
               reverse
-              imageSrc="/images/sol1-img.png"
+              imageSrc="/images/sol3img.png"
+              imageAnchor="bottom-right"
+              imageWidth="75%"
             />
           </div>
         </section>
